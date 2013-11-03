@@ -33,8 +33,11 @@ int main()
 	inFile >> init1 >> init2 >> init3 >> posCode >> age >> dollarsPerHour >> payCode; // read input from file
 
 	//test to output on screen first
-
+	
 	cout << "Name" << setw(12) << "Position" << setw(12) << "Age" << setw(12) << "Annual" << setw(12) << "Pay Code";
+	
+	cout << "There should be " << fileLines << " lines."; // test of the lines counter
+
 	for (int i = 0; i < fileLines; i++)
 	{
 		cout << init1 << init2 << init3 << setw(12) << posCode << setw(12) << age << setw(12) << dollarsPerHour << setw(12) << payCode;
