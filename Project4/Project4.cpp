@@ -12,7 +12,7 @@ using namespace std;
 
 void posType (char); // function that will convert the posCode to a position name
 void ageGroup (int); // function that will convert the age to a group using a switch
-int Code (int);      // function that will 
+int Code (int);      // function that will convert code to pay code
 
   
 int main() 
@@ -26,7 +26,9 @@ int main()
 	ifstream inFile;     // define ifstream to inFile command
 	inFile.open("employees.txt");
 
-	inFile >> init1 >> init2 >> init3 >> classCode >> age >> dollarsPerHour >> payCode;
+	inFile >> init1 >> init2 >> init3 >> posCode >> age >> dollarsPerHour >> payCode; // read input from file
+
+
 
 }
 
