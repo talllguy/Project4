@@ -14,6 +14,7 @@ using namespace std;
 
 void posType (char); // function that will convert the posCode to a position name
 void ageGroup (int); // function that will convert the age to a group using a switch
+void hour2annual (float); // function to convert hourly to annual wage
 int Code (int);      // function that will convert code to pay code
 
   
@@ -25,7 +26,7 @@ int main()
 	int age(0); // age of worker
 	float dollarsPerHour(0.); // salary of employee (per hour)
 	int payCode(0); //pay code
-
+	int payCodeConv(0); // pay code converted
 	ifstream inFile;     // define ifstream to inFile command
 	inFile.open("Employees.txt"); // open 
 	
@@ -34,9 +35,30 @@ int main()
 	while (inFile.good())
 	{
 		inFile >> init1 >> init2 >> init3 >> posCode >> age >> dollarsPerHour >> payCode; // read input from file
-		cout << init1 << init2 << init3 << setw(12) << posCode << setw(12) << age << setw(12) << dollarsPerHour << setw(12) << payCode << endl;
+		
+		cout << init1 << init2 << init3 << setw(12) << " ";
+		posType(posCode);
+		cout << setw(12);
+		ageGroup(age);
+		cout << setw(12);
+		hour2annual(dollarsPerHour);
+		payCodeConv = Code(payCode);
+		cout << setw(12)<< payCodeConv << endl;
 	}
 
 	return 0;
 }
 
+void posType (char)
+{
+
+}
+void ageGroup (int)
+{
+}
+void hour2annual (float)
+{}
+int Code (int)
+{
+	return 0;
+}
