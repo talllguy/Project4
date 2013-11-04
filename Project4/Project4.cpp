@@ -9,6 +9,7 @@ Algorithm:	Read infile of employees into variables. Process certain
 #include <fstream>
 #include <iostream>
 #include <iomanip>
+#include <string>
 using namespace std;
 
 void posType (char); // function that will convert the posCode to a position name
@@ -26,22 +27,16 @@ int main()
 	int payCode(0); //pay code
 
 	ifstream inFile;     // define ifstream to inFile command
-
-	inFile.open("Employees.txt"); // first open to count lines
-	fileLines = count(istreambuf_iterator<char>(inFile),istreambuf_iterator<char>(), '\n'); // count lines
-	inFile.close(); // then close
-	inFile.open("Employees.txt"); // open again
-	inFile >> init1 >> init2 >> init3 >> posCode >> age >> dollarsPerHour >> payCode; // read input from file
-
-	//test to output on screen first
+	inFile.open("Employees.txt"); // open 
+	
 	cout << "Name" << setw(12) << "Position" << setw(12) << "Age" << setw(12) << "Annual" << setw(12) << "Pay Code\n";
-	//cout << init1 << init2 << init3 << setw(12) << posCode << setw(12) << age << setw(12) << dollarsPerHour << setw(12) << payCode << endl;
-	//cout << "There should be " << fileLines << " lines.\n"; // test of the lines counter
 
-	for (int i = 0; i < fileLines; i++)
+	while (inFile.good())
 	{
+		inFile >> init1 >> init2 >> init3 >> posCode >> age >> dollarsPerHour >> payCode; // read input from file
 		cout << init1 << init2 << init3 << setw(12) << posCode << setw(12) << age << setw(12) << dollarsPerHour << setw(12) << payCode << endl;
 	}
+
 	return 0;
 }
 
