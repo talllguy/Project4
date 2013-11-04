@@ -36,7 +36,7 @@ int main()
 	{
 		inFile >> init1 >> init2 >> init3 >> posCode >> age >> dollarsPerHour >> payCode; // read input from file
 		
-		cout << init1 << init2 << init3 << setw(12) << " ";
+		cout << init1 << init2 << init3 << setw(13);
 		posType(posCode);
 		cout << setw(12);
 		ageGroup(age);
@@ -49,12 +49,36 @@ int main()
 	return 0;
 }
 
-void posType (char)
+void posType (char posCode)
 {
-
+	switch (posCode)
+	{
+	case 'A':
+		cout << "Management";
+		break;
+	case 'B':
+		cout <<	"Supervisor";
+		break;
+	case 'C':
+		cout << "Clerical";
+		break;
+	default:
+		cout << "Invalid";
+		break;
+	}
 }
-void ageGroup (int)
+void ageGroup (int age)
 {
+	if (age < 25)
+		cout << "group 1";
+	else if ((age >= 25) && (age <= 40))
+		cout << "group 2";
+	else if ((age >= 41) && (age <= 65))
+		cout << "group 3";
+	else if (age > 65)
+		cout << "group 4";
+	else
+		cout << "invalid input";
 }
 void hour2annual (float)
 {}
