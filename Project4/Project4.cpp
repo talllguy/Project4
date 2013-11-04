@@ -43,7 +43,7 @@ int main()
 		cout << setw(12);
 		hour2annual(dollarsPerHour);
 		payCodeConv = Code(payCode);
-		cout << setw(12)<< payCodeConv << endl;
+		cout << setw(6)<< payCodeConv << endl;
 	}
 
 	return 0;
@@ -78,11 +78,30 @@ void ageGroup (int age)
 	else if (age > 65)
 		cout << "group 4";
 	else
-		cout << "invalid input";
+		cout << "invalid";
 }
-void hour2annual (float)
-{}
-int Code (int)
+void hour2annual (float dollarsPerHour)
 {
-	return 0;
+	float converted(0);
+	converted = (dollarsPerHour * 2080);
+	
+	// set precision of output to 2
+    cout.setf(ios::fixed);  
+    cout.setf(ios::showpoint);  
+    cout.precision(2);
+	cout << converted;
+}
+int Code (int posCode)
+{
+	int digit1(0), digit2(0), digit3(0), digit4(0), sum(0);
+	
+	digit1 = (posCode / 1000);
+	posCode %= 1000;
+	digit2 = (posCode / 100);
+	posCode %= 100;
+	digit3 = (posCode / 10);
+	posCode %= 10;
+	digit4 = (posCode / 1); // not necessary. included for clarity. alt would be just assign posCode to digit4
+	sum = (digit1 + digit2 + digit3 + digit4);
+	return sum;
 }
