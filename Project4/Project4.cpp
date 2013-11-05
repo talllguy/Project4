@@ -28,24 +28,26 @@ int main()
 	int payCode(0); //pay code
 	int payCodeConv(0); // pay code converted
 	ifstream inFile;     // define ifstream to inFile command
-	inFile.open("Employees.txt"); // open 
-	
-	cout << "Name" << setw(15) << "Position" << setw(12) << "Age" << setw(12) << "Annual" << setw(12) << "Pay Code\n";
+	ofstream outFile;    // define outfile
+	inFile.open("Employees.txt"); // open input file
+	outFile.open("EmployeeOutput.txt"); // open output spool file
+	outFile << "Name" << setw(15) << "Position" << setw(12) << "Age" << setw(12) << "Annual" << setw(12) << "Pay Code\n";
 
 	while (inFile.good())
 	{
 		inFile >> init1 >> init2 >> init3 >> posCode >> age >> dollarsPerHour >> payCode; // read input from file
 		
-		cout << init1 << init2 << init3 << setw(16);
+		outFile << init1 << init2 << init3 << setw(16);
 		posType(posCode);
-		cout << setw(12);
+		outFile << setw(12);
 		ageGroup(age);
-		cout << setw(12);
+		outFile << setw(12);
 		hour2annual(dollarsPerHour);
 		payCodeConv = Code(payCode);
-		cout << setw(11)<< payCodeConv << endl;
+		outFile << setw(11)<< payCodeConv << endl;
 	}
-
+	inFile.close();
+	outFile.close();
 	return 0;
 }
 
