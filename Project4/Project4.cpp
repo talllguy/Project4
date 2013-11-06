@@ -16,7 +16,8 @@ void posType (char); // function that will convert the posCode to a position nam
 void ageGroup (int); // function that will convert the age to a group using a switch
 void hour2annual (float); // function to convert hourly to annual wage
 int Code (int);      // function that will convert code to pay code
-
+	ifstream inFile;     // define ifstream to inFile command
+	ofstream outFile;    // define outfile2
   
 int main() 
 { 
@@ -27,8 +28,7 @@ int main()
 	float dollarsPerHour(0.); // salary of employee (per hour)
 	int payCode(0); //pay code
 	int payCodeConv(0); // pay code converted
-	ifstream inFile;     // define ifstream to inFile command
-	ofstream outFile;    // define outfile
+
 	inFile.open("Employees.txt"); // open input file
 	outFile.open("EmployeeOutput.txt"); // open output spool file
 	outFile << "Name" << setw(15) << "Position" << setw(12) << "Age" << setw(12) << "Annual" << setw(12) << "Pay Code\n";
