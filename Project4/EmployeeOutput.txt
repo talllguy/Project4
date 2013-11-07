@@ -1,6 +1,6 @@
 Name       Position         Age      Annual   Pay Code
-TGP         21
-JWW         18
-TMS          7
-MLH         20
-SSB         16
+TGP        Clerical     group 1     8112.00         21
+JWW      Supervisor     group 2    13520.00         18
+TMS        Clerical     group 3    16224.00          7
+MLH      Management     group 3    64480.00         20
+SSB      Supervisor     group 2    25584.00         16

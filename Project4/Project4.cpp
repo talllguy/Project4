@@ -16,8 +16,8 @@ void posType (char); // function that will convert the posCode to a position nam
 void ageGroup (int); // function that will convert the age to a group using a switch
 void hour2annual (float); // function to convert hourly to annual wage
 int Code (int);      // function that will convert code to pay code
-	ifstream inFile;     // define ifstream to inFile command
-	ofstream outFile;    // define outfile2
+ifstream inFile;     // define ifstream to inFile command
+ofstream outFile;    // define outfile2
   
 int main() 
 { 
@@ -56,31 +56,31 @@ void posType (char posCode)
 	switch (posCode)
 	{
 	case 'A':
-		cout << "Management";
+		outFile << "Management";
 		break;
 	case 'B':
-		cout <<	"Supervisor";
+		outFile <<	"Supervisor";
 		break;
 	case 'C':
-		cout << "Clerical";
+		outFile << "Clerical";
 		break;
 	default:
-		cout << "Invalid";
+		outFile << "Invalid";
 		break;
 	}
 }
 void ageGroup (int age)
 {
 	if (age < 25)
-		cout << "group 1";
+		outFile << "group 1";
 	else if ((age >= 25) && (age <= 40))
-		cout << "group 2";
+		outFile << "group 2";
 	else if ((age >= 41) && (age <= 65))
-		cout << "group 3";
+		outFile << "group 3";
 	else if (age > 65)
-		cout << "group 4";
+		outFile << "group 4";
 	else
-		cout << "invalid";
+		outFile << "invalid";
 }
 void hour2annual (float dollarsPerHour)
 {
@@ -88,10 +88,10 @@ void hour2annual (float dollarsPerHour)
 	converted = (dollarsPerHour * 2080);
 	
 	// set precision of output to 2
-    cout.setf(ios::fixed);  
-    cout.setf(ios::showpoint);  
-    cout.precision(2);
-	cout << converted;
+    outFile.setf(ios::fixed);  
+    outFile.setf(ios::showpoint);  
+    outFile.precision(2);
+	outFile << converted;
 }
 int Code (int posCode)
 {
