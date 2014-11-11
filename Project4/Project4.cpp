@@ -8,16 +8,16 @@ Problem:	Bob's bank wants to process employee data stored in one file into a
 			more readable format.
 Algorithm:	Read in a file of employees into variables, process with functions,
 			and output to another file. Four functions:
-			posType: convert posCode (e.g. 'A') into a position name, using a
-				switch case statement.
-			ageGroup: function that uses several if/else statements to output
-				a specific output group depending on conditions
-			hour2annual: A super simple function that converts the hourly
-				salary to yearly.
-			code: function that uses division and % to add the values up of an
-				integer's digits. returns value to main
-			main function takes in all data from a file and then outputs the
-				data to another file in a good looking way.
+		posType: convert posCode (e.g. 'A') into a position name, using a
+			switch case statement.
+		ageGroup: function that uses several if/else statements to output
+			a specific output group depending on conditions
+		hour2annual: A super simple function that converts the hourly
+			salary to yearly.
+		code: function that uses division and % to add the values up of an
+			integer's digits. returns value to main
+		main function takes in all data from a file and then outputs the
+		data to another file in a good looking way.
 ******************************************************************************/
 
 // headers to include
